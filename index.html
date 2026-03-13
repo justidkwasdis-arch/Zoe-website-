@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$ZOE - Deflated Cat | Pump.fun Memecoin</title>
+  <meta name="description" content="$ZOE is the Deflated Cat memecoin on Solana. Join the purr-fect community on Pump.fun!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Press+Start+2P&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff6b9d;
+      --secondary: #7c4dff;
+      --accent: #00f5a8;
+      --dark: #0f0f1b;
+      --darker: #090912;
+      --light: #f8f9ff;
+      --gray: #8a8aa5;
+      --gradient: linear-gradient(135deg, #ff6b9d, #7c4dff, #00f5a8);
+      --card-bg: rgba(30, 30, 60, 0.7);
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Exo 2', sans-serif;
+      background: var(--darker);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(124, 77, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 157, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 245, 168, 0.08) 0%, transparent 60%);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(124,77,255,0.1) 0%, transparent 70%);
+      animation: pulse 8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .logo {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 3.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      text-shadow: 0 0 30px rgba(255, 107, 157, 0.5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .slogan {
+      font-family: 'Comic Neue', cursive;
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin: 15px 0 25px;
+      font-weight: 700;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      color: var(--gray);
+      margin-bottom: 35px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 4px 20px rgba(255, 107, 157, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 107, 157, 0.6);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 245, 168, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .btn-telegram { background: #2CA5E0; color: white; }
+    .btn-telegram:hover { background: #1a8ab8; transform: translateY(-3px); }
+    
+    .btn-x { background: #000; color: white; border-color: #333; }
+    .btn-x:hover { background: #111; transform: translateY(-3px); }
+
+    .contract-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 15px 25px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .contract-box:hover {
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+
+    .contract-box .copy-icon {
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 50px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      color: var(--gray);
+    }
+
+    .about-image {
+      text-align: center;
+      position: relative;
+    }
+
+    .cat-meme-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      border: 3px solid var(--primary);
+      box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* ===== TWITTER POST SECTION ===== */
+    .twitter-section {
+      background: rgba(20, 20, 40, 0.5);
+    }
+
+    .twitter-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .twitter-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .twitter-info h4 {
+      color: var(--light);
+      margin-bottom: 2px;
+    }
+
+    .twitter-info span {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .twitter-content {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: var(--light);
+    }
+
+    .twitter-image {
+      width: 100%;
+      border-radius: 12px;
+      margin: 15px 0;
+      border: 2px solid var(--border);
+    }
+
+    .twitter-stats {
+      display: flex;
+      gap: 25px;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border);
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .twitter-stats span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .twitter-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #1DA1F2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .twitter-link:hover {
+      background: #1a8cd8;
+      transform: translateY(-2px);
+    }
+
+    /* ===== TOKENOMICS ===== */
+    .tokenomics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .token-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .token-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .token-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 10px 0;
+    }
+
+    .token-card .label {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    .token-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* ===== ROADMAP ===== */
+    .roadmap {
+      position: relative;
+    }
+
+    .roadmap::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--gradient);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .phase {
+      display: flex;
+      margin-bottom: 50px;
+      position: relative;
+      width: 100%;
+    }
+
+    .phase:nth-child(odd) { justify-content: flex-end; }
+    .phase:nth-child(even) { justify-content: flex-start; }
+
+    .phase-content {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 45%;
+      position: relative;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .phase:nth-child(odd) .phase-content { margin-right: calc(50% + 30px); }
+    .phase:nth-child(even) .phase-content { margin-left: calc(50% + 30px); }
+
+    .phase-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.1rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .phase-description {
+      color: var(--light);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      font-style: italic;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phase ul {
+      list-style: none;
+      color: var(--gray);
+    }
+
+    .phase li {
+      margin-bottom: 12px;
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .phase li::before {
+      content: "🐾";
+      position: absolute;
+      left: 0;
+    }
+
+    .phase-dot {
+      position: absolute;
+      left: 50%;
+      top: 35px;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      border: 4px solid var(--darker);
+      z-index: 2;
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .phase-status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-left: 10px;
+      text-transform: uppercase;
+    }
+
+    .status-active {
+      background: rgba(0, 245, 168, 0.2);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .status-upcoming {
+      background: rgba(124, 77, 255, 0.2);
+      color: var(--secondary);
+      border: 1px solid var(--secondary);
+    }
+
+    /* ===== HOW TO BUY ===== */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      border-radius: 50%;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .step h4 {
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .wallet-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .wallet-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--light);
+      transition: all 0.3s;
+    }
+
+    .wallet-btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* ===== MEME GALLERY ===== */
+    .meme-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .meme-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .meme-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+    }
+
+    .meme-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .meme-caption {
+      padding: 15px;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      padding: 40px 0 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .disclaimer {
+      color: var(--gray);
+      font-size: 0.85rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 245, 168, 0.15);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin: 15px 0;
+      border: 1px solid var(--accent);
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { order: -1; }
+      .cat-meme-img { max-width: 300px; margin: 0 auto; display: block; }
+      
+      .roadmap::before { left: 30px; }
+      .phase { justify-content: flex-start !important; }
+      .phase-content { 
+        margin-left: 60px !important; 
+        max-width: 100%; 
+      }
+      .phase-dot { left: 30px; }
+      
+      .logo { font-size: 2.5rem; }
+      .slogan { font-size: 1.4rem; }
+    }
+
+    @media (max-width: 600px) {
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 300px; justify-content: center; }
+      .stats-bar { gap: 20px; }
+      .stat-value { font-size: 1.3rem; }
+      section { padding: 60px 0; }
+      .phase-content { padding: 20px; }
+      .phase-title { font-size: 0.9rem; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="logo">$ZOE</h1>
+      <p class="slogan">🐱 The Deflated Cat on Solana</p>
+      <p class="description">
+        Zoe isn't just another cat meme—she's the purr-fect storm of chaos, community, and crypto. 
+        Born on Pump.fun, powered by degenerates, destined for the moon. 🚀
+      </p>
+      
+      <div class="cta-buttons">
+        <a href="https://pump.fun/coin/4pH4oqVM33Wp4JchzYNdzfqvThtpqB3Kqfbb7BmBpump" target="_blank" class="btn btn-primary">
+          🛒 Buy $ZOE Now
+        </a>
+        <a href="https://t.me/savezoepump" target="_blank" class="btn btn-telegram">
+          ✈️ Join Telegram
+        </a>
+        <a href="https://x.com/i/status/2032471618287726812" target="_blank" class="btn btn-x">
+          🐦 Follow on X
+        </a>
+      </div>
+
+      <div class="contract-box" onclick="copyContract()">
+        <span class="copy-icon">📋</span>
+        <span id="contract">4pH4oqVM33Wp4JchzYNdzfqvThtpqB3Kqfbb7BmBpump</span>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--gray); margin-top: 8px;">Click to copy contract address</p>
+
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        LIVE ON PUMP.FUN • BONDING CURVE ACTIVE
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-value">$2.5K</div>
+          <div class="stat-label">Market Cap</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">$0.00000254</div>
+          <div class="stat-label">Current Price</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">99.82%</div>
+          <div class="stat-label">Liquidity Locked</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">🐱 ABOUT $ZOE</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>The Legend of the Deflated Cat</h3>
+          <p>
+            In a universe of over-inflated egos and pumped-up promises, <strong>Zoe</strong> emerged—deflated, real, and unapologetically chaotic.
+          </p>
+          <p>
+            She's not here to rug. She's not here to shill. She's here to <em>vibe</em>. Built by the community, for the community, $ZOE represents the raw, unfiltered spirit of Solana memecoins.
+          </p>
+          <p>
+            <strong>Why care?</strong> Because memes are culture. Culture is value. And Zoe? She's the catalyst.
+          </p>
+          <p style="margin-top: 20px; font-style: italic; color: var(--accent);">
+            "When the market deflates, Zoe inflates your spirit. 🎈"
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="https://i.redd.it/sad-orange-cat-v0-8xvq9z8wq0xc1.jpg" alt="Deflated Cat Zoe" class="cat-meme-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TWITTER POST SECTION ===== -->
+  <section class="twitter-section">
+    <div class="container">
+      <h2 class="section-title">🐦 FROM X (TWITTER)</h2>
+      <div class="twitter-container">
+        <div class="twitter-header">
+          <div class="twitter-avatar">🐱</div>
+          <div class="twitter-info">
+            <h4>$ZOE - Deflated Cat</h4>
+            <span>@savezoepump • Official Account</span>
+          </div>
+        </div>
+        <div class="twitter-content">
+          <p>🚀 <strong>$ZOE is LIVE on Pump.fun!</strong></p>
+          <p style="margin-top: 10px;">The Deflated Cat has landed on Solana. No rugs, no team dumps, just pure deflated cat energy. Join the movement and be part of the story! 🐱💨</p>
+          <p style="margin-top: 10px;">CA: <code style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">4pH4oqVM33Wp4JchzYNdzfqvThtpqB3Kqfbb7BmBpump</code></p>
+          <p style="margin-top: 10px;">#ZOE #Solana #PumpFun #Memecoin #DeflatedCat</p>
+        </div>
+        <img src="https://media.tenor.com/TKuJUfABdEgAAAAC/sad-cat-crying-cat.gif" alt="ZOE Deflated Cat" class="twitter-image">
+        <div class="twitter-stats">
+          <span>💬 234</span>
+          <span>🔁 891</span>
+          <span>❤️ 2.4K</span>
+          <span>📊 156K</span>
+        </div>
+        <a href="https://x.com/i/status/2032471618287726812" target="_blank" class="twitter-link">
+          🐦 View on X / Twitter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOKENOMICS ===== -->
+  <section id="tokenomics" style="background: rgba(20,20,40,0.5);">
+    <div class="container">
+      <h2 class="section-title">💰 TOKENOMICS</h2>
+      <p style="text-align: center; color: var(--gray); max-width: 600px; margin: 0 auto 30px;">
+        Fair launch. No presale. No team dump. Just pure, deflated cat energy.
+      </p>
+      
+      <div class="tokenomics-grid">
+        <div class="token-card">
+          <div class="icon">📦</div>
+          <div class="value">1B</div>
+          <div class="label">Total Supply</div>
+        </div>
+        <div class="token-card">
+          <div class="icon">💧</div>
+          <div class="value">99.82%</div>
+          <div class="label">Liquidity Locked</div>
+        </div>
+        <div class="token-card">
+          <div class="icon">🔥</div>
+          <div class="value">0%</div>
+          <div class="label">Tax / Burn</div>
+        </div>
+        <div class="token-card">
+          <div class="icon">👥</div>
+          <div class="value">0.18%</div>
+          <div class="label">Creator Allocation</div>
+        </div>
+        <div class="token-card">
+          <div class="icon">📈</div>
+          <div class="value">1%</div>
+          <div class="label">Bonding Curve Progress</div>
+        </div>
+        <div class="token-card">
+          <div class="icon">🎯</div>
+          <div class="value">$37K</div>
+          <div class="label">To Raydium Graduation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEME GALLERY ===== -->
+  <section id="memes">
+    <div class="container">
+      <h2 class="section-title">😺 ZOE MEME GALLERY</h2>
+      <p style="text-align: center; color: var(--gray); margin-bottom: 20px;">
+        The deflated cat in all her glory. Submit your memes in Telegram!
+      </p>
+      <div class="meme-gallery">
+        <div class="meme-card">
+          <img src="https://i.redd.it/sad-orange-cat-v0-8xvq9z8wq0xc1.jpg" alt="Sad Orange Cat">
+          <div class="meme-caption">"When you check your portfolio and see $ZOE is still deflated"</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://media.tenor.com/TKuJUfABdEgAAAAC/sad-cat-crying-cat.gif" alt="Crying Cat">
+          <div class="meme-caption">"Me waiting for the bonding curve to complete"</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://i.imgur.com/sad-cat-looking-down.jpg" alt="Deflated Cat Looking Down">
+          <div class="meme-caption">"Zoe watching the chart go down... then up... then down"</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://media.tenor.com/crying-cat-meme.jpg" alt="Crying White Cat">
+          <div class="meme-caption">"When someone says they're selling their $ZOE"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROADMAP ===== -->
+  <section id="roadmap" class="roadmap">
+    <div class="container">
+      <h2 class="section-title">🗺️ ROADMAP</h2>
+      
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <div class="phase-content">
+          <h3 class="phase-title">PHASE 1: PURR-LAUNCH 🚀 <span class="phase-status status-active">ACTIVE</span></h3>
+          <p class="phase-description">"Laying the foundation for the deflated cat revolution"</p>
+          <ul>
+            <li>Launch on Pump.fun with fair distribution</li>
+            <li>Build passionate Telegram & X community</li>
+            <li>Reach 1,000+ loyal holders</li>
+            <li>Professional website & branding launch</li>
+            <li>Weekly meme contests with SOL prizes</li>
+            <li>Active community engagement & AMAs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <div class="phase-content">
+          <h3 class="phase-title">PHASE 2: CLIMBING THE CAT TREE 🌳 <span class="phase-status status-upcoming">UPCOMING</span></h3>
+          <p class="phase-description">"Scaling new heights and expanding the Zoe universe"</p>
+          <ul>
+            <li>Complete bonding curve → Graduate to Raydium</li>
+            <li>Get listed on CoinGecko & CoinMarketCap</li>
+            <li>Strategic influencer partnerships & shills</li>
+            <li>Teaser drop: $ZOE NFT collection preview</li>
+            <li>Community governance vote for key decisions</li>
+            <li>Cross-chain expansion planning</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <div class="phase-content">
+          <h3 class="phase-title">PHASE 3: MOON CATS 🌙 <span class="phase-status status-upcoming">UPCOMING</span></h3>
+          <p class="phase-description">"Defying gravity and reaching for the stars"</p>
+          <ul>
+            <li>Target major CEX listings (Gate.io, MEXC, more)</li>
+            <li>Official $ZOE NFT collection mint & airdrop</li>
+            <li>Charity partnerships for real cats in need</li>
+            <li>Metaverse integration: Zoe cat avatars</li>
+            <li>DAO formation with community treasury</li>
+            <li>Zoe merchandise store & IRL meetups</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO BUY ===== -->
+  <section id="how-to-buy">
+    <div class="container">
+      <h2 class="section-title">🛒 HOW TO BUY $ZOE</h2>
+      <p style="text-align: center; color: var(--gray); margin-bottom: 30px;">
+        New to Solana? Follow these simple steps to get your paws on $ZOE:
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Get Phantom Wallet</h4>
+          <p>Download the Phantom wallet extension or mobile app. It's free and takes 60 seconds.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Buy SOL</h4>
+          <p>Purchase Solana (SOL) on any major exchange (Coinbase, Binance, Kraken) and send to your Phantom wallet.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Go to Pump.fun</h4>
+          <p>Visit <a href="https://pump.fun/coin/4pH4oqVM33Wp4JchzYNdzfqvThtpqB3Kqfbb7BmBpump" target="_blank" style="color: var(--accent);">the $ZOE page on Pump.fun</a> and connect your wallet.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Swap SOL for $ZOE</h4>
+          <p>Enter amount of SOL to swap, confirm the transaction, and welcome to the deflated cat family! 🎉</p>
+        </div>
+      </div>
+
+      <div class="wallet-links">
+        <a href="https://phantom.app" target="_blank" class="wallet-btn">
+          <span>🦊</span> Get Phantom
+        </a>
+        <a href="https://pump.fun/coin/4pH4oqVM33Wp4JchzYNdzfqvThtpqB3Kqfbb7BmBpump" target="_blank" class="wallet-btn">
+          <span>🚀</span> Trade on Pump.fun
+        </a>
+        <a href="https://savezoe.wtf" target="_blank" class="wallet-btn">
+          <span>🌐</span> Visit savesoe.wtf
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <h3 style="font-family: 'Press Start 2P'; font-size: 1.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$ZOE</h3>
+      <p style="color: var(--gray); margin: 10px 0 25px;">The Deflated Cat • Solana • Pump.fun</p>
+      
+      <div class="footer-links">
+        <a href="https://t.me/savezoepump" target="_blank">✈️ Telegram</a>
+        <a href="https://x.com/i/status/2032471618287726812" target="_blank">🐦 X / Twitter</a>
+        <a href="https://pump.fun/coin/4pH4oqVM33Wp4JchzYNdzfqvThtpqB3Kqfbb7BmBpump" target="_blank">🚀 Pump.fun</a>
+        <a href="https://savezoe.wtf" target="_blank">🌐 Website</a>
+        <a href="https://discord.gg/uxento" target="_blank">💬 Discord</a>
+      </div>
+
+      <p class="disclaimer">
+        ⚠️ <strong>Disclaimer:</strong> $ZOE is a memecoin with no intrinsic value or expectation of financial return. 
+        This is for entertainment purposes only. Cryptocurrency investments are highly volatile and risky. 
+        Always do your own research (DYOR) and never invest more than you can afford to lose. 
+        Not financial advice. 18+ only.
+      </p>
+      
+      <p style="color: var(--gray); font-size: 0.8rem; margin-top: 25px;">
+        © 2026 $ZOE Community • Built with 💜 on Solana
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Copy contract address functionality
+    function copyContract() {
+      const contract = document.getElementById('contract').innerText;
+      navigator.clipboard.writeText(contract).then(() => {
+        const originalText = document.getElementById('contract').innerText;
+        document.getElementById('contract').innerText = 'COPIED! ✓';
+        setTimeout(() => {
+          document.getElementById('contract').innerText = originalText;
+        }, 2000);
+      });
+    }
+
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.token-card, .step, .phase-content, .about-text, .meme-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+
+    // Trigger initial visible elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      if (isElementInViewport(el)) {
+        el.classList.add('visible');
+      }
+    });
+
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
